@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!--NavBar-->
+    <nav>
+      <div class="nav_container">
+        <div class="nav_left-sec">
+          <img src="./images/icon-menu.svg" alt="Menu" class="hidden menu">
+          <img src="./images/logo.svg" alt="logo" class="nav_logo">
+          <div class="overlay"></div>
+          <ul class="nav_links">
+            <img src="./images//icon-close.svg" alt="close" class="close-btn hidden">
+            <li class="nav_link">Collections</li>
+            <li class="nav_link">Men</li>
+            <li class="nav_link">Women</li>
+            <li class="nav_link">About</li>
+            <li class="nav_link">Contact</li>
+          </ul>
+        </div>
+        <div class="nav_right.sec">
+          <div class="cart-container">
+            <button class="cart-btn">
+              <span class="indicator"></span>
+            </button>
+            <div class="cart-wrp invisible">
+              <p class="cart-heading">Cart</p>
+              <div class="divider"></div>
+              <div class="cart-content empty">
+                <p>Your cart is empty</p>
+              </div>      
+            </div>
+          </div>
+          <img src="./images/image-avatar.png" alt="avatar" class="avatar">
+        </div>
+      </div>
+      <a href="" class="shopping-cart"  style="margin-left: -110px; text-decoration: none; color: gray; font-size: 30px; cursor: pointer;"><i class="fa fa-shopping-cart"></i></a>
+    </nav>
+    <main>
+      <!--thumbnails-->
+      <section class="thumbnails">
+        <img src="./images/image-product-1.jpg" alt="product" class="main-thumbnail invisible-mob">
+        <div class="mobile-thumb hidden">
+          <img src="./images/image-product-1.jpg" alt="product" class="thumb-mob">
+          <button id="next"><img src="./images/icon-next.svg" alt="next"></button>
+          <button id="previous"><img src="./images/icon-previous.svg" alt="previous"></button>
+        </div>
+        <div>
+          <div class="preview">
+            <img src="./images//image-product-1-thumbnail.jpg" alt="product" class="selected">
+            <img src="./images//image-product-2-thumbnail.jpg" alt="product" class="selected">
+            <img src="./images//image-product-3-thumbnail.jpg" alt="product" class="selected">
+            <img src="./images//image-product-4-thumbnail.jpg" alt="product" class="selected">
+          </div>
+        </div>
+      </section>
+      <!--content-->
+      <section class="content">
+         <p class="company">Sneaker Company</p>
+         <h1 class="title">Fall Limited Edition Sneakers</h1>
+         <p class="info">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+         </p>
+         <div class="price">
+          <div class="new-price">
+            <p class="now">$125.00</p>
+            <span>50%</span>
+          </div>
+          <p class="old-price">$250.00</p>
+         </div>
+         <div class="buttons">
+          <div class="amount-btn" style="box-shadow: 0px 2px 3px 0px rgb(0, 0, 0, 0.5);">
+            <button id="minus" onclick="minus()">
+              <img src="./images/icon-minus.svg" alt="minus">
+            </button>
+            <p class="amount">0</p>
+            <button id="plus" onclick="plus()">
+              <img src="./images/icon-plus.svg" alt="plus">
+            </button>
+          </div>
+          <button class="add-btn">
+            <img src="./images/icon-cart.svg" alt="cart">
+            Add to cart
+          </button>
+         </div>
+      </section>
+    </main>
+  </div>
+  <!--Lightbox-->
+<div class="lightbox invisible">
+  <div class="lightbox-container">
+    <button class="close-lightbox"><img src="./images/icon-close.svg" alt="close"></button>
+    <img src="./images/image-product-1.jpg" alt="product" class="main-thumbnail invisible-mob" id="main-picture">
+    <div class="preview">
+      <img src="./images/image-product-1-thumbnail.jpg" alt="product" class="selected">
+      <img src="./images/image-product-2-thumbnail.jpg" alt="product" id="pic-2">
+      <img src="./images/image-product-3-thumbnail.jpg" alt="product">
+      <img src="./images/image-product-1-thumbnail.jpg" alt="product">
+    </div>
+  </div>
+</div>
+
+
+  <script src="app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script>
+    $(".preview #pic-2").on("click", function(){
+      $(".main-thumbnail .invisible-mob").attr("src", "./images/image-product-2.jpg");
+    })
+  </script>
+</body>
+</html>
